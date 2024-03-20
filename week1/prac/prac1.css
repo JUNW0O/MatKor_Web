@@ -1,0 +1,13 @@
+h1 {
+  color: red;
+}
+* {
+  font-family: "Consolas";
+}
+p > i {
+  color: aqua;
+}
+input:hover {
+  border-color: green;
+  border-radius: 10px;
+}
