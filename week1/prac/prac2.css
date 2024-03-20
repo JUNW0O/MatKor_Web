@@ -1,0 +1,19 @@
+#combination-table {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  height: 20rem;
+  justify-content: space-around;
+}
+
+.row {
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.cell {
+  width: 6rem;
+  text-align: center;
+}
