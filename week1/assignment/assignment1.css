@@ -1,0 +1,13 @@
+#flex-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+}
+
+#count {
+  color: red;
+  font-size: 4rem;
+  margin-top: 5%;
+}
