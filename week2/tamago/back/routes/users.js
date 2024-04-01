@@ -1,11 +1,12 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET users listing. */
+/* Nothing */
 router.get("/", function (req, res, next) {
   res.send("respond with a resource");
 });
 
+/* Decrement count & Decide color */
 router.post("/:cnt", function (req, res, next) {
   const cnt = req.params.cnt;
   const maxcnt = parseInt(req.body.maxcnt);
@@ -17,6 +18,7 @@ router.post("/:cnt", function (req, res, next) {
     "blue",
     "darkblue",
     "purple",
+    "purple", // for count = 0
   ];
 
   if (cnt == 0) {
