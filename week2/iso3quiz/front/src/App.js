@@ -10,7 +10,7 @@ function App() {
 
   const getQuiz = () => {
     axios
-      .get("api/users/quiz")
+      .get("api/quizzes/quiz")
       .then((res) => {
         setCountry(res.data.country);
       })
@@ -20,7 +20,7 @@ function App() {
   };
 
   const handleChange = (event) => {
-    setAnswer(event.target.value);
+    setAnswer(event.target.value.toUpperCase());
   };
 
   const handleSubmit = (event) => {
@@ -28,9 +28,9 @@ function App() {
     event.preventDefault();
     console.log(answer);
     axios
-      .get("api/users/answer?country=" + country)
+      .get("api/quizzes/answer?country=" + country)
       .then((res) => {
-        const alpha3 = res.data.alpha3;
+        const alpha3 = res.data["alpha-3"];
         if (alpha3 === answer) {
           window.alert("정답입니다!");
         } else {

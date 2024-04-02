@@ -30,7 +30,7 @@ router.get("/answer", function (req, res, next) {
   if (answer === undefined) {
     res.status(401).send("Wrong Country Name");
   } else {
-    res.status(200).json({ alpha3: answer["alpha-3"] });
+    res.status(200).json({ "alpha-3": answer["alpha-3"] });
   }
 });
 
