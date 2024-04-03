@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -28,10 +27,10 @@ function App() {
     event.preventDefault();
     console.log(answer);
     axios
-      .get("api/quizzes/answer?country=" + country)
+      .post("api/quizzes/answer", { country: country, answer: answer })
       .then((res) => {
         const alpha3 = res.data["alpha-3"];
-        if (alpha3 === answer) {
+        if (res.data.correct) {
           window.alert("정답입니다!");
         } else {
           window.alert("오답입니다. 정답은 " + alpha3 + " 입니다.");

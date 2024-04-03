@@ -20,17 +20,20 @@ router.get("/quiz", function (req, res, next) {
   res.status(200).json({ country: quiz.name });
 });
 
-router.get("/answer", function (req, res, next) {
+router.post("/answer", function (req, res, next) {
   const countries = require("../../../data/countries.json");
-  const country = req.query.country;
+  const country = req.body.country;
+  const guess = req.body.answer;
   const answer = countries.find(function (data) {
     return data.name === country;
   });
-
   if (answer === undefined) {
     res.status(401).send("Wrong Country Name");
   } else {
-    res.status(200).json({ "alpha-3": answer["alpha-3"] });
+    res.status(200).json({
+      "alpha-3": answer["alpha-3"],
+      correct: answer["alpha-3"] === guess,
+    });
   }
 });
 
