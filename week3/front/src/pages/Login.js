@@ -1,9 +1,10 @@
 import './Login.css';
 
-function Login() {
+function Login(props) {
     return (
         <div className="Login">
             <h1>Login</h1>
+            <h2>{props.time}</h2>
         </div>
     );
 }
